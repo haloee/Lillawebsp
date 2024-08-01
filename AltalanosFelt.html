@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+        .kapcs {
+            height: 200px;
+            text-align: center;
+            background-image: url('contactfirstpic.webp');
+            margin-top: 0px;
+            padding-top: 100px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .cards-container {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            
+        }
+        card {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            flex: 1;
+            
+        }
+        button {
+            background-color: #041a05; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        button:hover {
+            background-color: #45a049;
+            transform: scale(1.1);
+        }
+        .Tajekoztato{
+            width: 100%;
+            height: 100px;
+            background-color: black;
+            text-align: center;
+        }
+        .active {
+    font-weight: bold;
+    #preloader {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 99999;
+}
+
+#preloader:before,
+#preloader:after {
+  content: "";
+  background-color: #000000;
+  position: absolute;
+  inset: 0;
+  width: 50%;
+  height: 100%;
+  transition: all 0.3s ease 0s;
+  z-index: -1;
+}
+
+#preloader:after {
+  left: auto;
+  right: 0;
+}
+
+#preloader .line {
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  width: 1px;
+  height: 280px;
+  transition: all 0.8s ease 0s;
+}
+
+#preloader .line:before {
+  content: "";
+  position: absolute;
+  background-color: #ffffff;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 0%;
+  transform: translateY(-50%);
+  animation: lineincrease 1000ms ease-in-out 0s forwards;
+}
+
+#preloader .line:after {
+  content: "";
+  position: absolute;
+  background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  transform: translateY(-100%);
+  animation: linemove 1200ms linear 0s infinite;
+  animation-delay: 2000ms;
+}
+
+#preloader.loaded .line {
+  opacity: 0;
+  height: 100% !important;
+}
+
+#preloader.loaded .line:after {
+  opacity: 0;
+}
+
+#preloader.loaded:before,
+#preloader.loaded:after {
+  animation: preloaderfinish 300ms ease-in-out 500ms forwards;
+}
+
+@keyframes lineincrease {
+  0% {
+    height: 0%;
+  }
+
+  100% {
+    height: 100%;
+  }
+}
+
+@keyframes linemove {
+  0% {
+    transform: translateY(200%);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes preloaderfinish {
+  0% {
+    width: 5 0%;
+  }
+
+  100% {
+    width: 0%;
+  }
+}
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="lillawebshopmainpage.html">Főoldal</a></li>
+                <li><a href="#">Rólam</a></li>
+                <li><a href="#">Katalógus</a></li>
+                <li><a href="lillakapcsolatpage.html">Kapcsolat</a></li>
+            </ul>
+        </nav>
+    </header>
+  <h1>Általános Szerződési Feltételek</h1>
+  <h1>ÁLTALÁNOS SZERZŐDÉSI FELTÉTELEK</h1>
+  <p><strong>HATÁLYOS:</strong> 2021. Október 18.</p>
+  
+  <p>
+      A jelen Általános Szerződési Feltételek (a továbbiakban: ÁSZF) Kuzma Lilla Zsuzsanna Egyéni Vállalkozó (továbbiakban: Szolgáltató), és a Szolgáltató által a 
+      <a href="http://www.lillakuzmaart.com">www.lillakuzmaart.com</a> weboldalon keresztül nyújtott elektronikus kereskedelmi szolgáltatásokat igénybe vevő Ügyfél (a továbbiakban: Ügyfél) jogait és kötelezettségeit tartalmazza (Szolgáltató és Ügyfél a továbbiakban együttesen: Felek).
+  </p>
+  
+  <p>
+      Az ÁSZF minden jogügyletre és szolgáltatásra vonatkozik, amely a 
+      <a href="http://www.lillakuzmaart.com">www.lillakuzmaart.com</a> weboldalon keresztül történik, függetlenül attól, hogy annak teljesítése Magyarországról vagy külföldről, a Szolgáltató vagy közreműködője által történik.
+  </p>
+  
+  <h2>Szolgáltató Adatai:</h2>
+  <p>
+      Név: Kuzma Lilla Zsuzsanna EV<br>
+      Székhely és levelezési cím: 1131, Budapest, Madarász Viktor utca 13 II épület II emelet 126 ajtó<br>
+      Vállalkozói tevékenység megkezdése: 2021. Augusztus 26<br>
+      Nyilvántartási szám: 52810642<br>
+      Adószám: 69177464-1-42<br>
+      Ügyfélszolgálat: lásd bővebben 1.7<br>
+      Telefonszáma: +36 70 226 5957<br>
+      Email cím: <a href="mailto:lillakuzmaart@gmail.com">lillakuzmaart@gmail.com</a>
+  </p>
+  
+  <h2>1. ÁLTALÁNOS TUDNIVALÓK, A FELEK KÖZÖTTI SZERZŐDÉS LÉTREJÖTTE</h2>
+  
+  <h3>1.1.</h3>
+  <p>
+      A jelen ÁSZF hatálya kiterjed a Magyarország területén nyújtott minden olyan elektronikus kereskedelmi szolgáltatásra, amely a 
+      <a href="http://www.lillakuzmaart.com">www.lillakzmaart.com</a> weboldalon (a továbbiakban: Weboldal) található elektronikus áruházon (a továbbiakban: www.lillakuzmaart.com webáruház) keresztül történik.
+  </p>
+  <p>
+      Továbbá jelen ÁSZF hatálya kiterjed minden olyan kereskedelmi ügyletre Magyarország területén, amely jelen szerződésben meghatározott Felek között jön létre. A web áruházban történő vásárlást az elektronikus kereskedelmi szolgáltatások, az információs társadalommal összefüggő szolgáltatások egyes kérdéseiről szóló 2001. évi CVIII. törvény (“Elkertv.”) szabályozza.
+  </p>
+  
+  <h3>1.2.</h3>
+  <p>
+      A web áruházban történő vásárlás elektronikus úton leadott megrendeléssel lehetséges, a jelen ÁSZF-ben meghatározott módon.
+  </p>
+  
+  <h3>1.3.</h3>
+  <p>
+      A web áruház szolgáltatásainak jelentős része elérhető minden felhasználó számára, regisztráció nélkül.
+  </p>
+  
+  <h3>1.4.</h3>
+  <p>
+      A megrendelés leadását követően a szerződés, annak teljesítéséig szabadon és következmény nélkül módosítható, illetve lemondható. Erre telefonon és elektronikus levélben van lehetőség.
+  </p>
+  <p>
+      A Felek között az áru megvásárlásával magyar nyelven létrejött szerződésírásba foglalt szerződésnek minősül, a Szolgáltató azt iktatja, és annak létrejöttét követő 5 évig őrzi.
+  </p>
+  
+  <h3>1.5.</h3>
+  <p>
+      A szerződés nyelve magyar.
+  </p>
+  
+  <h3>1.6.</h3>
+  <p>
+      A Szolgáltató semmilyen magatartási kódex rendelkezéseinek nem veti alá magát.
+  </p>
+  
+  <h3>1.7. Ügyfélszolgálat elérhetőségei</h3>
+  <p>
+      • Ügyfélszolgálat nyitvatartási ideje: H-P 9-17<br>
+      • Telefon: +36 70 226 5957<br>
+      • Internet cím: <a href="http://www.lillakuzmaart.com">lillakuzmaart.com</a><br>
+      • E-mail: <a href="mailto:lillakuzmaart@gmail.com">lillakuzmaart@gmail.com</a>
+  </p>
+  
+  <h2>2. MEGRENDELÉS MENETE</h2>
+  
+  <h3>2.1.</h3>
+  <p>
+      A vásárolandó áruk lényeges tulajdonságait, jellemzőit, az áruk használatára vonatkozó utasításokat a konkrét árucikk információs oldaláról lehet megismerni azzal, hogy az áru részletes tényleges tulajdonságait a termékhez mellékelésre kerülő használati utasítás tartalmazza.
+  </p>
+  <p>
+      A Szolgáltató szerződésszerű teljesítésének minősül, ha a termék a weboldalon vagy a használati utasításban nyújtott tájékoztatásnál kedvezőbb, előnyösebb tulajdonságokkal rendelkezik.
+  </p>
+  <p>
+      Ha a vásárlás előtt az áruval kapcsolatban kérdése merülne fel, ügyfélszolgálatunk készséggel áll rendelkezésére. Az általunk forgalmazott termék – ahol ezt a jogszabályok előírják – használati utasítását az áruhoz mellékeljük.
+  </p>
+  <p>
+      Ha véletlenül nem kapná kézhez az áruval együtt a kötelező használati utasítást, azt azonnal – mielőtt az árut használatba veszi – jelezze vevőszolgálatunknál, pótoljuk.
+  </p>
+  <p>
+      Amennyiben a Weboldalon található bármely áru minőségével, alapvető tulajdonságával, használatával, használhatóságával kapcsolatban, a weboldalon közölteknél több információra van szüksége, kérjük, forduljon ügyfélszolgálatunkhoz, melynek adatait, elérhetőségét az 1.7. pontban találja.
+  </p>
+  
+  <h3>2.2.</h3>
+  <p>
+      A vételár mindig a kiválasztott termék mellett feltüntetett összeg, amely ha nincs külön jelölve, az általános forgalmi adót már tartalmazza.
+  </p>
+  <p>
+      A termékek vételára tartalmazza a kiszállítás költségét, kivéve ha ez a végső fizetési oldalon máshogy van feltüntetve.
+  </p>
+  
+  <h3>2.3.</h3>
+  <p>
+      A Weboldalról megrendelhető termékek árai változtatásának jogát a Szolgáltató fenntartja azzal, hogy a módosítás a Weboldalon való megjelenéssel egyidejűleg lép hatályba.
+  </p>
+  <p>
+      A módosítás a már megrendelt termékek vételárát kedvezőtlenül nem befolyásolja. Online bankkártyával történő fizetés kezdeményezésekor, az elektronikus fizetési értesítő kiküldése és a termék átvétele közti időszakban bekövetkezett árcsökkenés esetén nem áll módunkban pénzt visszatéríteni.
+  </p>
+  <p>
+      Az online fizetési tranzakció biztonsági ellenőrzése minimálisan 24 órát vesz igénybe, a termék átvétele csak ezt követően lehetséges.
+  </p>
+  
+  <h3>2.4.</h3>
+  <p>
+      Amennyiben a Szolgáltató minden gondossága ellenére hibás ár kerül a Weboldal felületére, különös tekintettel a nyilvánvalóan téves, pl. a termék közismert, általánosan elfogadott vagy becsült árától jelentősen eltérő, esetleg rendszerhiba miatt megjelenő “0” Ft-os vagy “1” Ft-os árra, akkor a Szolgáltató nem köteles a terméket hibás áron szállítani, hanem felajánlhatja a helyes áron történő szállítást, amelynek ismeretében az Ügyfél elállhat vásárlási szándékától.
+  </p>
+  <p>
+      A weboldalon megjelentetett termékképek helyenként csak illusztrációk, azok a valóságtól eltérhetnek.
+  </p>
+  
+  <h3>2.5.</h3>
+  <p>
+      A megrendelést a Szolgáltató Weboldalán keresztül az Ügyféltől úgy fogadja el, hogy az Ügyfél adataira vonatkozó mező maradéktalan kitöltése szükséges.
+  </p>
+  <p>
+      A Szolgáltatót az Ügyfél által tévesen és/vagy pontatlanul megadott rendelési adatokra visszavezethető szállítási késedelemért, illetve egyéb problémáért, hibáért semminemű felelősség nem terheli.
+  </p>
+  <p>
+      Az Ügyfél a kiválasztott termékeket az egyes termékekre kattintást követően megjelenő, a termék részletes adatait ismertető oldalon található „Kosárba rakom” gomb használatával teheti Kosarába.
+  </p>
+  <p>
+      A Kosár tartalmát megtekinteni, módosítani a Weboldal jobb oldalán található kosár ikonra kattintást követően van lehetőség, ahol megadható az egyes termékek kívánt mennyisége, illetve a Kosár tartalma törölhető („Eltávolítás”).
+  </p>
+  <p>
+      Amennyiben az Ügyfél a Kosár tartalmát véglegesítette, a „Fizetés” feliratra kattintva a megjelenő felületen be kell jelentkeznie a Weboldalra vagy regisztrálnia kell, hogy megrendelését leadhassa. Ezt követően választani tud az átvételi módok közül illetve meg tudja adni a számlázási és szállítási adatokat.
+  </p>
+  <p>
+      Ha minden szükséges adatot megadott és kiválasztotta az átvételi módot, akkor a „Folytatás” gombra kattintva választani tud, hogy hogyan kívánja kiegyenlíteni a megrendelésének végösszegét.
+  </p>
+  <p>
+      Ha választott a fizetési módok közül, akkor a „Fizetés” gombra kattintva egy összegző oldalon ellenőrizheti a megrendelés feladása előtt rendelése adatait, módosíthatja a számlázási és szállítási címet, kiválaszthatja a fizetés és a szállítás módját, valamint megjegyzést fűzhet megrendeléséhez.
+  </p>
+  <p>
+      A megrendelés feladására, az ajánlat elküldésére „Megrendelés véglegesítése” feliratra kattintást követően kerül sor. A rendelés leadása tehát a „Megrendelés véglegesítése” gombra kattintással történik, ami az Ügyfél részére fizetési kötelezettséget keletkeztet.
+  </p>
+  
+  <h2>3. ADATBEVITELI HIBÁK JAVÍTÁSA</h2>
+  
+  <h3>3.1.</h3>
+  <p>
+      Az Ügyfélnek a rendelés bármely szakaszában és a megrendelés Szolgáltató részére való elküldéséig a Web áruházban bármikor lehetősége van az adatbeviteli hibák javítására a megrendelési felületen (pl. termék törlése a kosárból a „Eltávolítás” feliratra kattintva).
+  </p>
+  
+  <h2>4. AJÁNLATI KÖTÖTTSÉG, RENDELÉSEK VISSZAIGAZOLÁSA</h2>
+  
+  <h3>4.1.</h3>
+  <p>
+      Az Ügyfél által elküldött ajánlat (megrendelés) megérkezését a Szolgáltató késedelem nélkül, automatikus visszaigazoló e-mail útján legkésőbb 48 órán belül visszaigazolja az Ügyfél részére, mely visszaigazoló e-mail tartalmazza:
+  </p>
+  <ul>
+      <li>az Ügyfél által a vásárlás, vagy a regisztráció során megadott adatokat (pl. számlázási és szállítási információk),</li>
+      <li>a rendelés azonosítóját,</li>
+      <li>a rendelés dátumát,</li>
+      <li>a megrendelt termékhez tartozó elemek felsorolását, mennyiségét, a termék árát,</li>
+      <li>és a fizetendő végösszeget.</li>
+  </ul>
+  <p>
+      Ez a visszaigazoló email kizárólag tájékoztatja az Ügyfelet arról, hogy a megrendelése a Szolgáltatóhoz megérkezett.
+  </p>
+  
+  <h3>4.2.</h3>
+  <p>
+      Az Ügyfél mentesül az ajánlati kötöttség alól, ha késedelem nélkül, vagyis 48 órán belül nem kapja meg Szolgáltatótól az elküldött rendelésére vonatkozó külön elfogadó e-mailt.
+  </p>
+  
+  <h3>4.3.</h3>
+  <p>
+      Ha az Ügyfél rendelését már elküldte a Szolgáltató részére és hibát vesz észre a visszaigazoló e-mailben szereplő adatok tekintetében, azt 1 napon belül jeleznie kell a Szolgáltató felé.
+  </p>
+  
+  <h3>4.4.</h3>
+  <p>
+      A megrendelés elektronikus úton megkötött szerződésnek minősül, amelyre a polgári törvénykönyvről szóló 2013. évi V. törvény, az elektronikus kereskedelmi szolgáltatások, valamint az információs társadalommal összefüggő szolgáltatások egyes kérdéseiről szóló 2001. évi CVIII. törvényben foglaltak irányadóak.
+  </p>
+  <p>
+      A szerződés a fogyasztó és a vállalkozás közötti szerződések részletes szabályairól szóló 45/2014 (II.26.) Korm. rendelet hatálya alá tartozik, és szem előtt tartja a fogyasztók jogairól szóló Európai Parlament és a Tanács 2011/83/EU irányelvének rendelkezéseit.
+  </p>
+  <h1>5. SZÁLLÍTÁSI ÉS FIZETÉSI FELTÉTELEK</h1>
+
+    <h2>5.1. Szállítási feltételek</h2>
+    <p>A Szolgáltató a megrendelt és házhoz szállítani kért árut szállítmányozó cég igénybevételével szállítja házhoz, a Szállítási és Fizetési feltételek oldalon olvasható feltételek szerint. A Szolgáltató a szállítási díj változtatásának jogát fenntartja azzal, hogy a módosítás a Weboldalon való megjelenéssel egyidejűleg lép hatályba. A módosítás a már megrendelt termékek vételárát nem befolyásolja.</p>
+
+    <h2>5.2. Kiszállítási időpont</h2>
+    <p>Szolgáltató a rendelés teljesíthetőségét követően lehetőséget biztosít Ügyfélnek a kiszállítási időpont megválasztására, mely nem konkrét időpontot jelöl, csak közelítő szállítási intervallum kiválasztására szolgál. Meghatározott órára történő kiszállítást a Szolgáltatónak nem áll módjában vállalni.</p>
+
+    <h2>5.3. Szolgáltatások teljesítése</h2>
+    <p>A Weboldalon megrendelt szolgáltatásokat a Szolgáltató az Ügyfélnek e-mailben küldött rendelési visszaigazolásban szereplő helyszínen teljesíti.</p>
+
+    <h2>5.4. Fizetési módok</h2>
+    <p>Az Ügyfél a Szolgáltató által biztosított fizetési módokról illetve átvételi lehetőségekről az XY oldalon tájékozódhat.</p>
+
+    <h2>6. ELÁLLÁSI JOG</h2>
+    <p>Az e pontban foglaltak kizárólag a szakmája, foglalkozása vagy üzleti tevékenysége körén kívül eljáró természetes személyre vonatkoznak, aki árut vesz, rendel, kap, használ, igénybe vesz, valamint az áruval kapcsolatos kereskedelmi kommunikáció, ajánlat címzettje (a továbbiakban „Fogyasztó”).</p>
+
+    <!-- A további pontokat és szakaszokat hasonló módon lehet tagolni. -->
+   
+     <!-- Footer -->
+     <footer class="bg-dark text-white mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Company Information -->
+                <div class="col-md-4">
+                    <h5>Company Name</h5>
+                    <p>
+                        1234 Street Name<br>
+                        City, State, 56789<br>
+                        Email: info@company.com<br>
+                        Phone: (123) 456-7890
+                    </p>
+                </div>
+                <!-- Navigation Links -->
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="AltalanosFelt.html" class="text-white" id="AltalanosFelt-link">Általános Szerződési Feltételek</a></li>
+                        <li><a href="#" class="text-white">Adatvédelmi Nyilatkozat</a></li>
+                        <li><a href="#" class="text-white">Cookie Tájékozató</a></li>
+                    </ul>
+                </div>
+                <!-- Social Media Icons -->
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <a href="#" class="text-white mr-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white mr-2"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white mr-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white mr-2"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12 text-center">
+                    <p>&copy; 2024 Company Name. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div id="preloader">
+        <div class="line"></div>
+      </div>
+      <script>
+        const preloader = document.querySelector('#preloader');
+  if (preloader) {
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        preloader.classList.add('loaded');
+      }, 1000);
+      setTimeout(() => {
+        preloader.remove();
+      }, 2000);
+    });
+  }
+      </script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var currentPath = window.location.pathname;
+    
+            var links = document.querySelectorAll('nav a',', AltalanosFelt.html');
+    
+            links.forEach(function(link) {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

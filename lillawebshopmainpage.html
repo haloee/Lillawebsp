@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
+
+    <style>
+        .icon-button {
+            display: inline-block;
+            padding: 10px;
+            border: none;
+            border-radius: 50%;
+            background-color: #3b5998;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .icon-button:hover {
+            background-color: #2d4373;
+        }
+        
+
+        .card {
+            width: 100%;
+            background-color: bisque;
+            background-image: url('contactfirstpic.webp');
+        }
+
+        .image-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .image-table td {
+            width: 33.33%;
+            padding: 10px;
+        }
+
+        .image-table img {
+            width: 100%;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .card-img {
+            flex: 0 0 auto;
+            width: 150px;
+        }
+
+        .card-content {
+            flex: 1;
+            padding: 16px;
+        }
+
+        .card-title {
+            font-size: 1.5em;
+            margin: 0 0 10px;
+        }
+
+        .card-text {
+            font-size: 1em;
+            color: #555;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: darkgray;
+            margin: 0;
+            padding: 0;
+        }
+
+        .alsoresz {
+            width: 100%;
+            background-color: black;
+            margin: 0 0 auto;
+            padding: auto;
+            left: 0;
+            right: 0;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        #preloader {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 99999;
+}
+
+#preloader:before,
+#preloader:after {
+  content: "";
+  background-color: #000000;
+  position: absolute;
+  inset: 0;
+  width: 50%;
+  height: 100%;
+  transition: all 0.3s ease 0s;
+  z-index: -1;
+}
+
+#preloader:after {
+  left: auto;
+  right: 0;
+}
+
+#preloader .line {
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  width: 1px;
+  height: 280px;
+  transition: all 0.8s ease 0s;
+}
+
+#preloader .line:before {
+  content: "";
+  position: absolute;
+  background-color: #ffffff;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 0%;
+  transform: translateY(-50%);
+  animation: lineincrease 1000ms ease-in-out 0s forwards;
+}
+
+#preloader .line:after {
+  content: "";
+  position: absolute;
+  background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  transform: translateY(-100%);
+  animation: linemove 1200ms linear 0s infinite;
+  animation-delay: 2000ms;
+}
+
+#preloader.loaded .line {
+  opacity: 0;
+  height: 100% !important;
+}
+
+#preloader.loaded .line:after {
+  opacity: 0;
+}
+
+#preloader.loaded:before,
+#preloader.loaded:after {
+  animation: preloaderfinish 300ms ease-in-out 500ms forwards;
+}
+
+@keyframes lineincrease {
+  0% {
+    height: 0%;
+  }
+
+  100% {
+    height: 100%;
+  }
+}
+
+@keyframes linemove {
+  0% {
+    transform: translateY(200%);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes preloaderfinish {
+  0% {
+    width: 5 0%;
+  }
+
+  100% {
+    width: 0%;
+  }
+}
+
+
+
+
+
+        .TovabbGallery{
+            padding-top: 30px;
+        }
+
+
+       
+
+        .header-eight {
+  position: relative;
+  padding:50px 0 100px 0;
+  background:var(--primary);
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .header-eight {
+    padding: 130px 0 80px 0;
+  }
+}
+@media (max-width: 767px) {
+  .header-eight {
+    padding: 100px 0 60px 0;
+  }
+}
+.header-eight .header-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .header-eight .header-image {
+    margin-top: 40px;
+  }
+}
+.header-eight .header-content {
+  border-radius: 0;
+  position: relative;
+  z-index: 1;
+  text-align: left;
+}
+.header-eight .header-content h1 {
+  font-weight: 700;
+  color: var(--white);
+  text-shadow: 0px 3px 8px #00000017;
+  text-transform: capitalize;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .header-eight .header-content h1  {
+    font-size: 35px;
+    line-height: 45px;
+  }
+}
+@media (max-width: 767px) {
+  .header-eight .header-content h1  {
+    font-size: 30px;
+    line-height: 42px;
+  }
+}
+.header-eight .header-content h1 span {
+  display: block;
+}
+.header-eight .header-content p {
+  margin-top: 30px;
+  color: var(--white);
+  opacity: 0.7;
+}
+.header-eight .button {
+  margin-top: 40px;
+}
+.header-eight .primary-btn {
+  margin-right: 12px;
+  background-color: var(--white);
+  color: var(--primary);
+  border: 1px solid transparent;
+}
+.header-eight .primary-btn:hover {
+  background-color: transparent;
+  color: var(--white);
+  border-color: var(--white);
+}
+.header-eight .video-button {
+  display: inline-flex;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  .header-eight .video-button {
+    margin-top: 20px;
+  }
+}
+.header-eight .video-button .text {
+  display: inline-block;
+  margin-left: 15px;
+  color: var(--white);
+  font-weight: 600;
+}
+.header-eight .video-button .icon-btn {
+  background: var(--white);
+  color: var(--primary);
+}
+.Betekint{
+  padding-top: 40px;
+  color: #000;
+            font-size: 26px;
+            font-weight: 300;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 30px 0 80px;
+}
+.Betekint b{
+  color: #ffc000;
+}
+
+
+p {
+  color: #b3b3b3;
+  font-weight: 300; }
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+
+a {
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease; }
+  a, a:hover {
+    text-decoration: none !important; }
+
+.content {
+  padding: 7rem 0; 
+background-color:bisque;
+}
+  
+
+h2 {
+  font-size: 20px; }
+
+.bg-left-half {
+  position: relative; }
+  .bg-left-half:before {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    z-index: -1;
+    content: "";
+    left: 0;
+    top: 0;
+    background-color: #f8f9fa; }
+
+.media-29101 img {
+  margin-bottom: 20px; }
+
+.media-29101 h3 {
+  font-size: 18px;
+  font-weight: 900 !important; }
+  .media-29101 h3 a {
+    color: #6c757d; }
+
+.owl-2-style .owl-nav {
+  display: none; }
+
+.owl-2-style .owl-dots {
+  text-align: center;
+  position: relative;
+  bottom: -30px; }
+  .owl-2-style .owl-dots .owl-dot {
+    display: inline-block; }
+    .owl-2-style .owl-dots .owl-dot span {
+      display: inline-block;
+      width: 15px;
+      height: 3px;
+      border-radius: 0px;
+      background: #cccccc;
+      -webkit-transition: 0.3s all cubic-bezier(0.32, 0.71, 0.53, 0.53);
+      -o-transition: 0.3s all cubic-bezier(0.32, 0.71, 0.53, 0.53);
+      transition: 0.3s all cubic-bezier(0.32, 0.71, 0.53, 0.53);
+      margin: 3px; }
+    .owl-2-style .owl-dots .owl-dot.active span {
+      background: #007bff; }
+    .owl-2-style .owl-dots .owl-dot:active, .owl-2-style .owl-dots .owl-dot:focus {
+      outline: none; }
+.owl-carousel,.owl-carousel .owl-item{-webkit-tap-highlight-color:transparent;position:relative}.owl-carousel{display:none;width:100%;z-index:1}.owl-carousel .owl-stage{position:relative;-ms-touch-action:pan-Y;touch-action:manipulation;-moz-backface-visibility:hidden}.owl-carousel .owl-stage:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}.owl-carousel .owl-stage-outer{position:relative;overflow:hidden;-webkit-transform:translate3d(0,0,0)}.owl-carousel .owl-item,.owl-carousel .owl-wrapper{-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0)}.owl-carousel .owl-item{min-height:1px;float:left;-webkit-backface-visibility:hidden;-webkit-touch-callout:none}.owl-carousel .owl-item img{display:block;width:100%}.owl-carousel .owl-dots.disabled,.owl-carousel .owl-nav.disabled{display:none}.no-js .owl-carousel,.owl-carousel.owl-loaded{display:block}.owl-carousel .owl-dot,.owl-carousel .owl-nav .owl-next,.owl-carousel .owl-nav .owl-prev{cursor:pointer;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.owl-carousel .owl-nav button.owl-next,.owl-carousel .owl-nav button.owl-prev,.owl-carousel button.owl-dot{background:0 0;color:inherit;border:none;padding:0!important;font:inherit}.owl-carousel.owl-loading{opacity:0;display:block}.owl-carousel.owl-hidden{opacity:0}.owl-carousel.owl-refresh .owl-item{visibility:hidden}.owl-carousel.owl-drag .owl-item{-ms-touch-action:pan-y;touch-action:pan-y;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.owl-carousel.owl-grab{cursor:move;cursor:grab}.owl-carousel.owl-rtl{direction:rtl}.owl-carousel.owl-rtl .owl-item{float:right}.owl-carousel .animated{animation-duration:1s;animation-fill-mode:both}.owl-carousel .owl-animated-in{z-index:0}.owl-carousel .owl-animated-out{z-index:1}.owl-carousel .fadeOut{animation-name:fadeOut}@keyframes fadeOut{0%{opacity:1}100%{opacity:0}}.owl-height{transition:height .5s ease-in-out}.owl-carousel .owl-item .owl-lazy{opacity:0;transition:opacity .4s ease}.owl-carousel .owl-item .owl-lazy:not([src]),.owl-carousel .owl-item .owl-lazy[src^=""]{max-height:0}.owl-carousel .owl-item img.owl-lazy{transform-style:preserve-3d}.owl-carousel .owl-video-wrapper{position:relative;height:100%;background:#000}.owl-carousel .owl-video-play-icon{position:absolute;height:80px;width:80px;left:50%;top:50%;margin-left:-40px;margin-top:-40px;background:url(owl.video.play.png) no-repeat;cursor:pointer;z-index:1;-webkit-backface-visibility:hidden;transition:transform .1s ease}.owl-carousel .owl-video-play-icon:hover{-ms-transform:scale(1.3,1.3);transform:scale(1.3,1.3)}.owl-carousel .owl-video-playing .owl-video-play-icon,.owl-carousel .owl-video-playing .owl-video-tn{display:none}.owl-carousel .owl-video-tn{opacity:0;height:100%;background-position:center center;background-repeat:no-repeat;background-size:contain;transition:opacity .4s ease}.owl-carousel .owl-video-frame{position:relative;z-index:1;height:100%;width:100%}
+    
+.VasarlasInfo{
+  background-color:aliceblue;
+}
+.VasarlasInfo h2{
+  text-align: center;
+  padding-top: 5%;
+}
+.VasarlasInfo h1{
+  text-align: center;
+  padding-top: 15%;
+}
+.VasarlasInfo p{
+  text-align: center;
+  color: #000;
+}
+.VasarlasInfo .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            padding-bottom: 10%;
+            padding-left: 15%;
+            padding-right: 15%;
+            
+        }
+       .VasarlasInfo .card {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            flex: 1;
+            min-width: 300px;
+            justify-content: center;
+        }
+
+        .container{
+          padding-top: 6%;
+          padding-right: 30px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/faqs/faq-3/assets/css/faq-3.css">
+
+    
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#"><img src="Lillalogo.png" alt="logo" height="50px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="lillawebshopmainpage.html">Főoldal</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="lillawebshopaboutpage.html">Rólam</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Katalógus</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="lillakapcsolatpage.html">Kapcsolat</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="lillawebshop.html">Kosár</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Nyelv</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+    
+<section id="hero-area" class="header-area header-eight">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 col-md-12 col-12">
+        <div class="header-content">
+          <h1>"Turning vision into reality"</h1>
+          <p>Absztrakt és Landscape akril festmények eladásra<br>
+          </p>
+          <p>Sztaracsek Lilla - Művész 
+            <a href="#" class="text-white mr-2"><i class="fab fa-facebook-f"></i></a>
+        </p>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12 col-12">
+        <div class="header-image">
+          <img src="lillakep12.jpg" alt="#" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    
+<div class="content">
+  <div class="container">
+      <h2 class="my-5 text-center"><b>Betekintés a munkáimba</b></h2>
+  </div>
+
+  <div class="site-section bg-left-half mb-5">
+      <div class="container owl-2-style">
+          <h2 class="text-primary py-5 ">Festményeim</h2>
+          <div class="owl-carousel owl-2">
+              <div class="media-29101">
+                  <a href="#"><img src="lillakep1.jpeg" alt="Image" class="img-fluid"></a>
+                  <h3><a href="#">Consectetur Adipisicing Elit</a></h3>
+              </div>
+              <div class="media-29101">
+                  <a href="#"><img src="lillakep2.jpeg" alt="Image" class="img-fluid"></a>
+                  <h3><a href="#">Beatae Doloribu</a></h3>
+              </div>
+              <div class="media-29101">
+                  <a href="#"><img src="lillakep3.png" alt="Image" class="img-fluid"></a>
+                  <h3><a href="#">Accusantium Eius Soluta</a></h3>
+              </div>
+              <div class="media-29101">
+                  <a href="#"><img src="lillakep3.png" alt="Image" class="img-fluid"></a>
+                  <h3><a href="#">Consectetur Adipisicing Elit</a></h3>
+              </div>
+              <div class="media-29101">
+                  <a href="#"><img src="lillakep3.png" alt="Image" class="img-fluid"></a>
+                  <h3><a href="#">Beatae Doloribu</a></h3>
+              </div>
+              <div class="media-29101">
+                  <a href="#"><img src="lillakep3.png" alt="Image" class="img-fluid"></a>
+                  <h3><a href="#">Accusantium Eius Soluta</a></h3>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="TovabbGallery">
+    <div class="container d-flex justify-content-center align-items-center full-height">
+        <button class="btn btn-primary">Tovább a Galériára</button>
+    </div>
+</div>
+</div>
+
+<section class="VasarlasInfo">
+  <h1><b>Vásárlási információk</b></h1>
+  <p>Vásárlóink számára többféle lehetőséget biztosítunk a megvásárolt festmény átvételére. <br>
+    Budapesten egyedülálló módon, személyesen juttatjuk el Vevőinkhez a festményeket!</p>
+
+    <div class="container">
+      <div class="row cards-container">
+          <div class="card col-md-6">
+            <img src="personal.svg" alt="Személyes Átvétel" height="100px">
+              <h2><b>Személyes Átvétel</b></h2>
+              <p>Vásárlóink Budapesten személyesen vehetik
+                 át képeiket. A rendelés leadása után
+                  telefonon egyeztetünk időpontot a 
+                   Vásárlóval!</p>
+          </div>
+          <div class="card col-md-6">
+            <img src="payment.svg" alt="Személyes Átvétel" height="100px">
+            <h2><b>Fizetés</b></h2>
+            <p>Vásárlóink banki átutalással, illetve <br>
+              személyes átvétel esetén a helyszínen <br>
+               készpénzben tudnak fizetni.</p>
+          </div>
+      </div>
+  </div>
+</section>
+    
+
+    <!-- FAQ 3 - Bootstrap Brain Component -->
+<section class="bsb-faq-3 py-3 py-md-5 py-xl-8">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+          <h2 class="mb-4 display-5 text-center"><b>Gyakran ismételt kérdések</b></h2>
+          <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
+        </div>
+      </div>
+    </div>
+  
+    <!-- FAQs: My Account -->
+    <div class="mb-8">
+      <div class="container">
+        <div class="row justify-content-center">
+          
+          <div class="col-11 col-xl-10">
+            <div class="accordion accordion-flush" id="faqAccount">
+              <div class="accordion-item bg-transparent border-top border-bottom py-3">
+                <h2 class="accordion-header" id="faqAccountHeading1">
+                  <button class="accordion-button collapsed bg-transparent fw-bold shadow-none link-primary" type="button" data-bs-toggle="collapse" data-bs-target="#faqAccountCollapse1" aria-expanded="false" aria-controls="faqAccountCollapse1">
+                    Hogyan tudok képet vásárolni?
+                  </button>
+                </h2>
+                <div id="faqAccountCollapse1" class="accordion-collapse collapse" aria-labelledby="faqAccountHeading1">
+                  <div class="accordion-body">
+                    <p>A megvásárolható képekből a "Menü/Katalógus" pont alatt tudnak Látogatóink válogatni. A kívánt festményt a katalógus oldalon, illetve a festmény képére kattintva, a termék oldalon lévő  "Kosárba Teszem" gombbal tudják kosarukba helyezni.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item bg-transparent border-bottom py-3">
+                <h2 class="accordion-header" id="faqAccountHeading2">
+                  <button class="accordion-button collapsed bg-transparent fw-bold shadow-none link-primary" type="button" data-bs-toggle="collapse" data-bs-target="#faqAccountCollapse2" aria-expanded="false" aria-controls="faqAccountCollapse2">
+                    Hogyan érem el a "Kosár" funkciót?
+                  </button>
+                </h2>
+                <div id="faqAccountCollapse2" class="accordion-collapse collapse" aria-labelledby="faqAccountHeading2">
+                  <div class="accordion-body">
+                    <p>A funkció a "Menü/Kosár" pont alatt érhető el, illetve a katalógus menü pont alatt a jobb felső sarokban lévő   ikonra kattintva hozható elő.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item bg-transparent border-bottom py-3">
+                <h2 class="accordion-header" id="faqAccountHeading3">
+                  <button class="accordion-button collapsed bg-transparent fw-bold shadow-none link-primary" type="button" data-bs-toggle="collapse" data-bs-target="#faqAccountCollapse3" aria-expanded="false" aria-controls="faqAccountCollapse3">
+                    Hogyan tudok fizetni?
+                  </button>
+                </h2>
+                <div id="faqAccountCollapse3" class="accordion-collapse collapse" aria-labelledby="faqAccountHeading3">
+                  <div class="accordion-body">
+                    <p>Vásárlóink 2 opció közül választhatnak:
+
+                        <br>• Közvetlen banki átutalás <br>
+                        • Fizetés átvételkor <br>
+                        
+                        Közvetlen banki átutalás esetén, a "Megrendelés Elküldése" gomb megnyomása után tovább irányítja a következő oldalra ahol elérhetővé válnak a számla és a megrendelés adatok.  Az összeg utalásakor fontos feltüntetni a rendelési azonosítót!
+                        
+                        Amennyiben a "Fizetés Átvételkor" opciót választja a megrendelő, az összeget átvételkor, tudja kifizetni.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item bg-transparent border-bottom py-3">
+                <h2 class="accordion-header" id="faqAccountHeading4">
+                  <button class="accordion-button collapsed bg-transparent fw-bold shadow-none link-primary" type="button" data-bs-toggle="collapse" data-bs-target="#faqAccountCollapse4" aria-expanded="false" aria-controls="faqAccountCollapse4">
+                    Hogyan működik a személyes átvétel?
+                  </button>
+                </h2>
+                <div id="faqAccountCollapse4" class="accordion-collapse collapse" aria-labelledby="faqAccountHeading4">
+                  <div class="accordion-body">
+                    <p>Amennyiben a Megrendelő személyesen szeretné átvenni a kívánt festményt, a fizetési oldalon válassza a "Személyes Átvétel Budapesten" opciót. A rendelés leadása után, egy munkanapon belül, felvesszük a kapcsolatot a Megrendelővel, időpont egyeztetés céljából.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item bg-transparent border-bottom py-3">
+                <h2 class="accordion-header" id="faqAccountHeading5">
+                  <button class="accordion-button collapsed bg-transparent fw-bold shadow-none link-primary" type="button" data-bs-toggle="collapse" data-bs-target="#faqAccountCollapse5" aria-expanded="false" aria-controls="faqAccountCollapse5">
+                    Hogyan léphetek kapcsolatba Önnel?
+                  </button>
+                </h2>
+                <div id="faqAccountCollapse5" class="accordion-collapse collapse" aria-labelledby="faqAccountHeading5">
+                  <div class="accordion-body">
+                    <p>Amennyiben kérdése adódik a "Menü/Kapcsolat" oldalon lévő űrlap kitöltésével léphet velem kapcsolatba.
+                        A válaszidő minimum 2 órát, maximum 48 órát vesz igénybe.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  
+  
+ 
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Company Information -->
+                <div class="col-md-4">
+                    <h5>Company Name</h5>
+                    <p>
+                        1234 Street Name<br>
+                        City, State, 56789<br>
+                        Email: info@company.com<br>
+                        Phone: (123) 456-7890
+                    </p>
+                </div>
+                <!-- Navigation Links -->
+                <div class="col-md-4 text-center">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Home</a></li>
+                        <li><a href="#" class="text-white">About Us</a></li>
+                        <li><a href="#" class="text-white">Services</a></li>
+                        <li><a href="#" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Social Media Icons -->
+                <div class="col-md-4 text-right">
+                    <h5>Follow Us</h5>
+                    <a href="#" class="text-white mr-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white mr-2"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white mr-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white mr-2"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12 text-center">
+                    <p>&copy; 2024 Company Name. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div id="preloader">
+        <div class="line"></div>
+      </div>
+      <script>
+        const preloader = document.querySelector('#preloader');
+  if (preloader) {
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        preloader.classList.add('loaded');
+      }, 1000);
+      setTimeout(() => {
+        preloader.remove();
+      }, 2000);
+    });
+  }
+      </script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/file1.js"></script>
+    <script src="js/file2.js"></script>
+    <script src="js/file3.js"></script>
+    <script src="js/file4.js"></script>
+    <script src="js/file5.js"></script>
+    
+</body>
+</html>

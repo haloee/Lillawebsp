@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Checkout</title>
+    <style>
+        .required:after {
+            content: "*";
+            color: red;
+        }
+        .error {
+            border-color: red;
+        }
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        #preloader {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 99999;
+}
+
+#preloader:before,
+#preloader:after {
+  content: "";
+  background-color: #000000;
+  position: absolute;
+  inset: 0;
+  width: 50%;
+  height: 100%;
+  transition: all 0.3s ease 0s;
+  z-index: -1;
+}
+
+#preloader:after {
+  left: auto;
+  right: 0;
+}
+
+#preloader .line {
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  width: 1px;
+  height: 280px;
+  transition: all 0.8s ease 0s;
+}
+
+#preloader .line:before {
+  content: "";
+  position: absolute;
+  background-color: #ffffff;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 0%;
+  transform: translateY(-50%);
+  animation: lineincrease 1000ms ease-in-out 0s forwards;
+}
+
+#preloader .line:after {
+  content: "";
+  position: absolute;
+  background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  transform: translateY(-100%);
+  animation: linemove 1200ms linear 0s infinite;
+  animation-delay: 2000ms;
+}
+
+#preloader.loaded .line {
+  opacity: 0;
+  height: 100% !important;
+}
+
+#preloader.loaded .line:after {
+  opacity: 0;
+}
+
+#preloader.loaded:before,
+#preloader.loaded:after {
+  animation: preloaderfinish 300ms ease-in-out 500ms forwards;
+}
+
+@keyframes lineincrease {
+  0% {
+    height: 0%;
+  }
+
+  100% {
+    height: 100%;
+  }
+}
+
+@keyframes linemove {
+  0% {
+    transform: translateY(200%);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes preloaderfinish {
+  0% {
+    width: 5 0%;
+  }
+
+  100% {
+    width: 0%;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><img src="Lillalogo.png" alt="logo" height="50px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="lillawebshopmainpage.html">Főoldal</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="lillawebshopaboutpage.html">Rólam</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Katalógus</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="lillakapcsolatpage.html">Kapcsolat</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="lillawebshop.html">Kosár</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Nyelv</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Checkout</h1>
+        <form id="checkoutForm" class="needs-validation" novalidate>
+            <div class="row">
+                <div class="col-md-8 order-md-1">
+                    <h4 class="mb-3">Billing address</h4>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="billingFirstName" class="required">First name</label>
+                            <input type="text" class="form-control" id="billingFirstName" required>
+                            <div class="invalid-feedback">Valid first name is required.</div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="billingLastName" class="required">Last name</label>
+                            <input type="text" class="form-control" id="billingLastName" required>
+                            <div class="invalid-feedback">Valid last name is required.</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="billingCompany">Company</label>
+                        <input type="text" class="form-control" id="billingCompany">
+                    </div>
+                    <div class="mb-3">
+                        <label for="billingCountry" class="required">Country</label>
+                        <input type="text" class="form-control" id="billingCountry" value="Magyarország" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="billingZip" class="required">ZIP</label>
+                        <input type="text" class="form-control" id="billingZip" required>
+                        <div class="invalid-feedback">ZIP code required.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="billingCity" class="required">City</label>
+                        <input type="text" class="form-control" id="billingCity" required>
+                        <div class="invalid-feedback">City required.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="billingAddress" class="required">Address</label>
+                        <input type="text" class="form-control" id="billingAddress" required>
+                        <div class="invalid-feedback">Please enter your shipping address.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="billingPhone" class="required">Phone</label>
+                        <input type="tel" class="form-control" id="billingPhone" required>
+                        <div class="invalid-feedback">Please enter a valid phone number.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="billingEmail" class="required">Email</label>
+                        <input type="email" class="form-control" id="billingEmail" required>
+                        <div class="invalid-feedback">Please enter a valid email address.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="billingEmailConfirm" class="required">Confirm Email</label>
+                        <input type="email" class="form-control" id="billingEmailConfirm" required>
+                        <div class="invalid-feedback">Emails do not match.</div>
+                    </div>
+                    <hr class="mb-4">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="shippingDifferent">
+                        <label class="custom-control-label" for="shippingDifferent">Shipping address is different from billing address</label>
+                    </div>
+                    <div id="shippingAddressContainer" style="display: none;">
+                        <h4 class="mb-3">Shipping address</h4>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="shippingFirstName" class="required">First name</label>
+                                <input type="text" class="form-control" id="shippingFirstName" required>
+                                <div class="invalid-feedback">Valid first name is required.</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="shippingLastName" class="required">Last name</label>
+                                <input type="text" class="form-control" id="shippingLastName" required>
+                                <div class="invalid-feedback">Valid last name is required.</div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="shippingCompany">Company</label>
+                            <input type="text" class="form-control" id="shippingCompany">
+                        </div>
+                        <div class="mb-3">
+                            <label for="shippingCountry" class="required">Country</label>
+                            <input type="text" class="form-control" id="shippingCountry" value="Magyarország" disabled>
+                        </div>
+                        <div class="mb-3">
+                            <label for="shippingZip" class="required">ZIP</label>
+                            <input type="text" class="form-control" id="shippingZip" required>
+                            <div class="invalid-feedback">ZIP code required.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="shippingCity" class="required">City</label>
+                            <input type="text" class="form-control" id="shippingCity" required>
+                            <div class="invalid-feedback">City required.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="shippingAddress" class="required">Address</label>
+                            <input type="text" class="form-control" id="shippingAddress" required>
+                            <div class="invalid-feedback">Please enter your shipping address.</div>
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+                    <h4 class="mb-3">Payment</h4>
+                    <div class="d-block my-3">
+                        <div class="custom-control custom-radio">
+                            <input id="cashOnDelivery" name="paymentOption" type="radio" class="custom-control-input" required>
+                            <label class="custom-control-label" for="cashOnDelivery">Cash on delivery</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input id="cardOnDelivery" name="paymentOption" type="radio" class="custom-control-input" required>
+                            <label class="custom-control-label" for="cardOnDelivery">Card on delivery</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input id="bankTransfer" name="paymentOption" type="radio" class="custom-control-input" required>
+                            <label class="custom-control-label" for="bankTransfer">Bank transfer</label>
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+                    <h4 class="mb-3">Order details</h4>
+                    <img src="painting.jpg" alt="Festmény" class="img-thumbnail">
+                    <p>Image name: Abstract Composition</p>
+                    <p>Image ID: AB123</p>
+                    <p>Image price: 20000 Ft</p>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Abstract Composition</td>
+                                <td>20000 Ft</td>
+                            </tr>
+                            <tr>
+                                <td>Shipping (<span id="shippingOption">Free</span>)</td>
+                                <td>Free</td>
+                            </tr>
+                            <tr>
+                                <th>Total</th>
+                                <th>20000 Ft</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr class="mb-4">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="termsAndConditions" required>
+                        <label class="custom-control-label" for="termsAndConditions">I have read and accept the <a href="#" target="_blank">Terms and Conditions</a></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="privacyPolicy" required>
+                        <label class="custom-control-label" for="privacyPolicy">I have read and accept the <a href="#" target="_blank">Privacy Policy</a></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="newsletter" checked>
+                        <label class="custom-control-label" for="newsletter">Subscribe to newsletter</label>
+                    </div>
+                    <button class="btn btn-primary btn-lg btn-block mt-4" type="submit">Place Order</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <footer class="bg-dark text-white mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Company Name</h5>
+                    <p>
+                        1234 Street Name<br>
+                        City, State, 56789<br>
+                        Email: info@company.com<br>
+                        Phone: (123) 456-7890
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="AltalanosFelt.html" class="text-white">Általános Szerződési Feltételek</a></li>
+                        <li><a href="#" class="text-white">Adatvédelmi Nyilatkozat</a></li>
+                        <li><a href="#" class="text-white">Cookie Tájékozató</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <a href="#" class="text-white mr-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white mr-2"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white mr-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white mr-2"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12 text-center">
+                    <p>&copy; 2024 Company Name. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const shippingDifferentCheckbox = document.getElementById('shippingDifferent');
+        const shippingAddressContainer = document.getElementById('shippingAddressContainer');
+        const billingEmailInput = document.getElementById('billingEmail');
+        const billingEmailConfirmInput = document.getElementById('billingEmailConfirm');
+        const shippingOptionSpan = document.getElementById('shippingOption');
+
+        shippingDifferentCheckbox.addEventListener('change', function() {
+            shippingAddressContainer.style.display = this.checked ? 'block' : 'none';
+        });
+
+        billingEmailConfirmInput.addEventListener('blur', function() {
+            if (this.value !== billingEmailInput.value) {
+                billingEmailInput.classList.add('error');
+                this.classList.add('error');
+                alert('Nem egyeznek a megadott email címek');
+            } else {
+                billingEmailInput.classList.remove('error');
+                this.classList.remove('error');
+            }
+        });
+
+        const deliveryOptions = document.getElementsByName('deliveryOption');
+        const paymentOptions = document.getElementsByName('paymentOption');
+
+        deliveryOptions.forEach(option => {
+            option.addEventListener('change', updateShippingOption);
+        });
+
+        paymentOptions.forEach(option => {
+            option.addEventListener('change', updatePaymentOption);
+        });
+
+        function updateShippingOption() {
+            const selectedOption = document.querySelector('input[name="deliveryOption"]:checked');
+            if (selectedOption) {
+                let shippingOptionText;
+                switch (selectedOption.value) {
+                    case 'M1':
+                        shippingOptionText = 'Személyes átvétel (Pécs)';
+                        break;
+                    case 'M2':
+                        shippingOptionText = 'Személyes kiszállítás Pécsen';
+                        break;
+                    case 'M3':
+                        shippingOptionText = 'GLS kiszállítás (Pécs területén kívül)';
+                        break;
+                }
+                shippingOptionSpan.textContent = shippingOptionText;
+            }
+        }
+
+        function updatePaymentOption() {
+            const selectedOption = document.querySelector('input[name="paymentOption"]:checked');
+            if (selectedOption) {
+                const cashOnDeliveryOption = document.getElementById('cashOnDelivery');
+                const cardOnDeliveryOption = document.getElementById('cardOnDelivery');
+
+                if (selectedOption.value === 'cashOnDelivery' || selectedOption.value === 'bankTransfer') {
+                    cashOnDeliveryOption.disabled = false;
+                    cardOnDeliveryOption.disabled = true;
+                } else if (selectedOption.value === 'cardOnDelivery') {
+                    cashOnDeliveryOption.disabled = true;
+                    cardOnDeliveryOption.disabled = false;
+                }
+            }
+        }
+
+        const form = document.getElementById('checkoutForm');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const requiredFields = document.querySelectorAll('input[required]');
+            let allFieldsFilled = true;
+
+            requiredFields.forEach(field => {
+                if (field.type === 'checkbox' && !field.checked) {
+                    field.classList.add('error');
+                    allFieldsFilled = false;
+                } else if (field.value.trim() === '') {
+                    field.classList.add('error');
+                    allFieldsFilled = false;
+                } else {
+                    field.classList.remove('error');
+                }
+            });
+
+            if (allFieldsFilled) {
+                // Submit form logic here
+                alert('Megrendelés elküldve!');
+                form.reset();
+            } else {
+                alert('Kérjük, töltse ki az összes kötelező mezőt!');
+            }
+        });
+    </script>
+    <div id="preloader">
+        <div class="line"></div>
+      </div>
+      <script>
+        const preloader = document.querySelector('#preloader');
+  if (preloader) {
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        preloader.classList.add('loaded');
+      }, 1000);
+      setTimeout(() => {
+        preloader.remove();
+      }, 2000);
+    });
+  }
+      </script>
+</body>
+</html>
